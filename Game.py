@@ -16,7 +16,7 @@ def ball_movement():
 
     # Start the ball movement when the game begins
     # TODO Task 5 Create a Merge Conflict
-    speed = 7
+    speed = 5
     if start:
         ball_speed_x = speed * random.choice((1, -1))  # Randomize initial horizontal direction
         ball_speed_y = speed * random.choice((1, -1))  # Randomize initial vertical direction
@@ -28,7 +28,7 @@ def ball_movement():
             #  Task 2: Fix score to increase by 1
             score += 1 # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
-            # TODO Task 6: Add sound effects HERE
+            #  Task 6: Add sound effects HERE
             mixer.music.load('wav.wav')
             mixer.music.play(ball.colliderect(player))
 
@@ -101,7 +101,7 @@ start = False  # Indicates if the game has started
 while True:
     # Event handling
     # TODO Task 4: Add your name
-    name = "John Doe"
+    name = "Yaniel Soto"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # Quit the game
             pygame.quit()
