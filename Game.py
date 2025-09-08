@@ -3,6 +3,11 @@ import pygame, sys, random
 
 from pygame import mixer
 
+def getrandomcolor():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b= random.randint(0, 255)
+    return (r, g, b)
 
 
 def ball_movement():
@@ -150,7 +155,7 @@ while True:
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, light_grey, player)  # Draw player paddle
     # T Task 3: Change the Ball Color
-    pygame.draw.ellipse(screen, pink, ball)  # Draw ball
+    pygame.draw.ellipse(screen, getrandomcolor(), ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
 
