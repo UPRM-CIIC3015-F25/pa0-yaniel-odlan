@@ -1,7 +1,13 @@
+from turtledemo.penrose import start
+
 import pygame, sys, random
 
 
-from pygame import mixer
+from pygame import mixer, surface
+from pygame.examples.cursors import image
+
+mj= pygame.image.load('bgpong.jpg')
+
 
 def getrandomcolor():
     r = random.randint(0, 255)
@@ -158,6 +164,11 @@ while True:
     pygame.draw.ellipse(screen, getrandomcolor(), ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
+
+    if restart:
+        imagee= screen.blit(mj, (0, 0))  # Displays the image at the top-left corner
+    if pygame.K_SPACE:
+        not imagee
 
     # Update display
     pygame.display.flip()
